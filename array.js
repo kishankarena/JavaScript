@@ -1,7 +1,7 @@
 var myArr =["kishan" , 22 , "student"];
 myArr.push(["happy",21,"student"]);
 console.log(myArr);
-var opt = myArr[1][2];
+var opt = myArr[3][2];
 console.log(opt);
 var output = myArr.pop();
 // console.log(myArr);
