@@ -1,0 +1,14 @@
+var myArr =["kishan" , 22 , "student"];
+myArr.push(["happy",21,"student"]);
+console.log(myArr);
+var opt = myArr[1][2];
+console.log(opt);
+var output = myArr.pop();
+// console.log(myArr);
+// console.log(output);
+myArr.shift();
+// console.log(myArr);
+myArr.unshift("Kishan");
+// console.log(myArr);
+var output= myArr[1];
+// console.log(output);
