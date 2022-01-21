@@ -36,3 +36,25 @@ function checkObj(checkProp){
 // console.log(checkObj("bark"));
 console.log(checkObj("type"));
 
+
+// Computed Properties:
+let fruit = prompt("Which fruit to buy?", "apple");
+let num = prompt("number of items :");
+
+let bag = {
+  [fruit]: [num], // the name of the property is taken from the variable fruit
+};
+
+alert( bag.apple); 
+
+
+//  for .... in loop
+let employee ={ 
+  name :  "Andrew",
+  age : 25,
+  isPermant : false
+  };
+  for (let key in employee)
+    // alert(key); // name,age , isPermant
+    // value of each key
+    // alert(employee[key]); // Andrew,25,false

@@ -13,7 +13,7 @@ let y = -2;
 // alert (+"");        //0
 let myVar1 = "2"
 let myVar2 = "5"
-// alert(+myVar1 + +myVar2); // 7
+// alert(+myVar1 + +myVar2); // 7        "precedence of unary "+" operator is higher than binary operator "+" "
 // String concatenation , binary +
 // alert(myVar1 + myVar2); // 25
 // alert("1"+ 2 + 2); // 122
