@@ -8,9 +8,13 @@ function sum(...inputs){
     console.log(total);
 
 }
+
+
+//OR
+
 sum(1,2,3,4,5,6,7,8,9,10);
 
-function random ( a,b,...c){
+function random (a,b,...c){
     console.log(...c);
 }
 random("Red", "Yellow","Green","Blue","White","Black");
