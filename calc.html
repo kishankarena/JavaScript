@@ -18,37 +18,37 @@
       <div class="display" id="screen">
         
       </div>
-      <div class="buttons">
+      <div class="input">
         <!-- Row-1 -->
         <div class="row mb-1">
           <div class="col-2">
             <button type="button" class="btn deg">DEG</button>
           </div>
           <div class="col-3">
-            <button type="button" class="btn">F-E</button>
+            <button type="button" class="btn mathFunction" value="FE">F-E</button>
           </div>
           <div class="col offset-6"></div>
         </div>
         <!-- Row-2 -->
         <div class="row g-1 mb-1">
-          <div class="col "><button type="button" class="btn text-muted">MC</button></div>
-          <div class="col "><button type="button" class="btn text-muted">MR</button></div>
-          <div class="col "><button type="button" class="btn">M+</button></div>
-          <div class="col "><button type="button" class="btn">M-</button></div>
-          <div class="col "><button type="button" class="btn">MS</button></div>
+          <div class="col "><button type="button" class="btn text-muted memoryBtns">MC</button></div>
+          <div class="col "><button type="button" class="btn text-muted memoryBtns">MR</button></div>
+          <div class="col "><button type="button" class="btn memoryBtns">M+</button></div>
+          <div class="col "><button type="button" class="btn memoryBtns">M-</button></div>
+          <div class="col "><button type="button" class="btn memoryBtns">MS</button></div>
         </div>
         <!-- Row-3 -->
         <div class="row mb-1">
           <div class="col-5">
             <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="trigonometry" data-bs-toggle="dropdown"
+              <button class="btn dropdown-toggle" type="button" id="trigono" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <img src="./icons/trigonometry.png" alt="trigonometry"> Trigonometry
+                <img src="./icons/trigonometry.png" alt="trigono"> Trigonometry
               </button>
-              <ul class="dropdown-menu" aria-labelledby="trigonometry">
-                <li><button class="dropdown-item" type="button" class="btn bg-light">sin</button></li>
-                <li><button class="dropdown-item" type="button" class="btn bg-light">cos</button></li>
-                <li><button class="dropdown-item" type="button" class="btn bg-light">tan</button></li>
+              <ul class="dropdown-menu" aria-labelledby="trigono">
+                <li><button class="dropdown-item" type="button" class="btn bg-light" id="trigonometry">sin</button></li>
+                <li><button class="dropdown-item" type="button" class="btn bg-light" id="trigonometry">cos</button></li>
+                <li><button class="dropdown-item" type="button" class="btn bg-light" id="trigonometry">tan</button></li>
               </ul>
             </div>
           </div>
@@ -59,9 +59,10 @@
                 <img src="./icons/function.png" alt="function"> Function
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownFunction">
-                <li><button class="dropdown-item" class="btn bg-light">aaa</button></li>
-                <li><button class="dropdown-item" class="btn bg-light">bbb</button></li>
-                <li><button class="dropdown-item" class="btn bg-light">ccc</button></li>
+                <li><button class="dropdown-item" class="btn bg-light" id="dropFunction">ceil</button></li>
+                <li><button class="dropdown-item" class="btn bg-light" id="dropFunction">floor</button></li>
+                <li><button class="dropdown-item" class="btn bg-light" id="dropFunction">random</button></li>
+                <li><button class="dropdown-item" class="btn bg-light" id="dropFunction">trunc</button></li>
               </ul>
             </div>
           </div>
@@ -69,13 +70,13 @@
         <!-- Row-4 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light">2<sup>nd</sup></button>
+            <button type="button" class="btn bg-light" id="secondBtn" onclick="changeBtnText()">2<sup>nd</sup></button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light"><img src="./icons/math-pi.svg" alt="PI"></button>
+            <button type="button" class="btn bg-light" onclick="calculatePi()"><img src="./icons/math-pi.svg" alt="PI"></button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light">e</button>
+            <button type="button" class="btn bg-light mathFunction" value="E">e</button>
           </div>
           <div class="col">
             <button type="button" class="btn bg-light" onclick="screenClear()">C</button>
@@ -95,43 +96,44 @@
         <!-- Row-5 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light">x<sup>2</sup></button>
+            <button type="button" class="btn bg-light mathFunction" id="changeBtn" value="xpow2">x<sup>2</sup></button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light">1/x</button>
+            <button type="button" class="btn bg-light mathFunction" value="inverse">1/x</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light">|x|</button>
+            <button type="button" class="btn bg-light mathFunction"value="modx">|x|</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light">exp</button>
+            <button type="button" class="btn bg-light mathFunction" value="exp">exp</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light">mod</button>
+            <button type="button" class="btn bg-light operator" value="%">mod</button>
           </div>
         </div>
         <!-- Row-6 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light"><img src="./icons/sqrt.svg" alt="sqrt"></button>
+            <button type="button" class="btn bg-light mathFunction" id="changeBtn" value="sqrt">&radic;</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light operator" value="(">(</button>
+            <button type="button" class="btn bg-light number">(</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light operator" value=")">)</button>
+            <button type="button" class="btn bg-light number">)</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-light">n!</button>
+            <button type="button" class="btn bg-light mathFunction" value="fact">n!</button>
           </div>
           <div class="col">
             <button type="button" class="btn bg-light operator" value="/">÷</button>
           </div>
+
         </div>
         <!-- Row-7 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light">x<sup>y</sup></button>
+            <button type="button" class="btn bg-light mathFunction" id="changeBtn" value="pow">x<sup>y</sup></button>
           </div>
           <div class="col">
             <button type="button" class="btn fw-bold bg-white number">7</button>
@@ -149,7 +151,7 @@
         <!-- Row-8 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light">10<sup>x</sup></button>
+            <button type="button" class="btn bg-light mathFunction" id="changeBtn" value="exp10">10<sup>x</sup></button>
           </div>
           <div class="col">
             <button type="button" class="btn fw-bold bg-white number">4</button>
@@ -167,7 +169,7 @@
         <!-- Row-9 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light">log</button>
+            <button type="button" class="btn bg-light mathFunction" id="changeBtn" value="log10">log</button>
           </div>
           <div class="col">
             <button type="button" class="btn fw-bold bg-white number">1</button>
@@ -185,10 +187,10 @@
         <!-- Row-10 -->
         <div class="row g-1 mb-1">
           <div class="col">
-            <button type="button" class="btn bg-light">ln</button>
+            <button type="button" class="btn bg-light mathFunction" id="changeBtn" value="log">ln</button>
           </div>
           <div class="col">
-            <button type="button" class="btn bg-white"><img src="./icons/plusOrminus.png" alt="plusorminus"></button>
+            <button type="button" class="btn bg-white" onclick="plusOrMinus()"><img src="./icons/plusOrminus.png" alt="plusorminus"></button>
           </div>
           <div class="col">
             <button type="button" class="btn fw-bold bg-white number">0</button>
